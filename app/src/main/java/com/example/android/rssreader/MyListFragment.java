@@ -2,7 +2,6 @@ package com.example.android.rssreader;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +24,14 @@ public class MyListFragment extends Fragment {
                 updateDetail("fake");
             }
         });
+        Button button2 = (Button) view.findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clean();
+            }
+        });
+
         return view;
     }
 
@@ -50,6 +57,10 @@ public class MyListFragment extends Fragment {
         String newTime = String.valueOf(System.currentTimeMillis());
         // send data to activity
         listener.onRssItemSelected(newTime);
+    }
+
+    public void clean() {
+        listener.onRssItemSelected("");
     }
 }
 
