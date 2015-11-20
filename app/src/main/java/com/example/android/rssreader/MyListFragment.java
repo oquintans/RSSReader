@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MyListFragment extends Fragment {
 
@@ -22,6 +23,7 @@ public class MyListFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 updateDetail("fake");
+
             }
         });
         Button button2 = (Button) view.findViewById(R.id.button2);
@@ -57,10 +59,17 @@ public class MyListFragment extends Fragment {
         String newTime = String.valueOf(System.currentTimeMillis());
         // send data to activity
         listener.onRssItemSelected(newTime);
+        TextView view = (TextView) getView().findViewById(R.id.rdy_text);
+        view.setText("");
     }
 
     public void clean() {
         listener.onRssItemSelected("");
+    }
+
+    public void setTexto(String url) {
+        TextView view = (TextView) getView().findViewById(R.id.rdy_text);
+        view.setText(url);
     }
 }
 

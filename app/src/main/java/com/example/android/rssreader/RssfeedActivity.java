@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 
-public class RssfeedActivity extends AppCompatActivity implements MyListFragment.OnItemSelectedListener {
+public class RssfeedActivity extends AppCompatActivity implements MyListFragment.OnItemSelectedListener, DetailFragment.OnOkSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,5 +22,11 @@ public class RssfeedActivity extends AppCompatActivity implements MyListFragment
         fragment.setText(link);
     }
 
+    @Override
+    public void onRssOkSelected(String link) {
+        MyListFragment fragment = (MyListFragment) getFragmentManager()
+                .findFragmentById(R.id.listFragment);
+        fragment.setTexto(link);
+    }
 }
 

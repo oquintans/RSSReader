@@ -16,5 +16,14 @@
         android:layout_height="wrap_content"
         android:text="Clean" />
 
+    <TextView
+        android:id="@+id/rdy_text"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dip"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20dip" />
+
 </LinearLayout>
 
